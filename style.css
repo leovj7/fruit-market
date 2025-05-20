@@ -1,0 +1,487 @@
+/* Variáveis CSS para facilitar a manutenção */
+:root {
+    --primary-color: #2E7D32;   /* Verde Floresta (Mais escuro e sério, CORRIGIDO) */
+    --secondary-color: #FFD54F; /* Amarelo Ouro Suave (Secundário/Destaque) */
+    --accent-color: #1A237E;    /* Azul Safira (Detalhes, rodapé) */
+    --text-dark: #212121;       /* Preto quase total para textos, mais forte (AJUSTADO) */
+    --text-light: #FFFFFF;      /* Branco puro para textos em fundos escuros (AJUSTADO) */
+    --bg-light: #FDFDFD;        /* Creme Suave (Fundo principal das seções) */
+    --bg-medium: #F5F5F5;       /* Um cinza bem clarinho para alternar seções claras (NOVO) */
+    --bg-dark: #1A237E;         /* Azul Safira (Fundo do rodapé e talvez hero) */
+    --border-color: #E0E0E0;    /* Cinza Claro (Bordas e linhas) */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+/* Reset básico e estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-dark); /* Texto principal mais escuro */
+    background-color: var(--bg-light); /* Fundo da página em creme suave */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilos do Cabeçalho (Header) */
+.header {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    font-family: var(--font-heading);
+    font-size: 2.2em;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav ul li {
+    margin-left: 30px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Estilos da Seção Hero */
+.hero {
+    /* Usando a imagem 'foto.jpg' da pasta 'assets' com overlay verde */
+    background: linear-gradient(rgba(46,125,50,0.7), rgba(46,125,50,0.7)), url('assets/foto.jpg') no-repeat center center;
+    background-size: cover; /* Garante que a imagem cubra toda a área */
+    color: var(--text-light); /* Texto branco puro */
+    text-align: center;
+    padding: 100px 0;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero h2 {
+    font-family: var(--font-heading);
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    max-width: 800px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--text-dark); /* Texto do botão mais escuro */
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #FFEB8A; /* Um amarelo um pouco mais claro no hover */
+    transform: translateY(-3px);
+}
+
+/* Estilos da Seção Sobre Nós */
+.sobre-nos {
+    padding: 80px 0;
+    background-color: var(--bg-medium); /* Fundo um pouco mais escuro (cinza clarinho) para contraste */
+}
+
+.sobre-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Para responsividade */
+}
+
+.sobre-img {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra mais visível */
+    max-width: 50%; /* Limita a largura da imagem */
+    width: 100%;
+    height: auto;
+    max-height: 300px; /* Garante altura máxima para a imagem */
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.sobre-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.sobre-text h3 {
+    font-family: var(--font-heading);
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.sobre-text p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: var(--text-dark); /* Texto mais escuro */
+}
+
+/* Estilos da Seção Produtos */
+.produtos {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--bg-light); /* Fundo claro para contrastar com a seção acima */
+}
+
+.produtos h3 {
+    font-family: var(--font-heading);
+    font-size: 2.8em;
+    color: var(--text-dark); /* Título em texto escuro */
+    margin-bottom: 50px;
+}
+
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.produto-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.produto-card img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.produto-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.produto-card p {
+    font-size: 1em;
+    color: var(--text-dark); /* Texto do card mais escuro */
+    /* min-height: 400px; REMOVIDO: estava causando espaços vazios desnecessários */
+}
+
+/* Estilos da Seção Contato */
+.contato {
+    padding: 80px 0;
+    background-color: var(--primary-color); /* Fundo da seção contato em verde floresta */
+    color: var(--text-light); /* Texto em branco puro */
+    text-align: center;
+}
+
+.contato h3 {
+    font-family: var(--font-heading);
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.contato p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    background-color: var(--bg-light); /* Fundo do formulário em creme suave */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Sombra mais definida */
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-dark); /* Labels do formulário em texto escuro */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    color: var(--text-dark); /* Texto do input mais escuro */
+    background-color: #FFFFFF;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.3); /* Sombra de foco com cor primary mais escura */
+}
+
+.contact-form .btn {
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    background-color: var(--secondary-color);
+    color: var(--text-dark); /* Texto do botão de envio mais escuro */
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .btn:hover {
+    background-color: #FFEB8A;
+}
+
+.contact-info {
+    font-size: 1.1em;
+    margin-top: 30px;
+    color: var(--text-light); /* Texto branco puro */
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+/* Estilos do Rodapé (Footer) */
+.footer {
+    background-color: var(--accent-color); /* Fundo do rodapé em azul safira */
+    color: var(--text-light); /* Texto do rodapé em branco puro */
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Espaçamento entre os elementos no rodapé */
+}
+
+.footer p {
+    font-size: 0.9em;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    /* Ajuste de margin-top conforme necessário, dependendo da flexibilidade do container */
+}
+
+.social-links a {
+    color: var(--text-light); /* Cor do ícone */
+    font-size: 1.8em; /* Tamanho do ícone */
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.1);
+    color: var(--secondary-color); /* Altera a cor do ícone no hover para amarelo */
+}
+
+/* Classe para esconder o crédito do Flaticon se desejar */
+.credit {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7); /* Mais discreto no fundo escuro */
+    text-decoration: none;
+    margin-top: 10px; /* Para separar do resto do conteúdo do rodapé */
+    display: block; /* Garante que o span ocupe sua própria linha se necessário */
+}
+
+.credit a {
+    color: inherit; /* Herda a cor do pai */
+    text-decoration: underline; /* Sublinha para indicar que é um link */
+}
+
+/* Removido do HTML, mas deixo aqui caso queira reintroduzir */
+/* .hero-img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    margin-bottom: 40px;
+} */
+
+.header.scrolled {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background-color: white;
+}
+
+/* Estilos de foco para acessibilidade */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* Botão Flutuante do WhatsApp */
+.btn-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366; /* Verde do WhatsApp */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 1em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe5c;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        align-items: flex-start; /* Alinha logo e navegação à esquerda */
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero h2 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .sobre-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sobre-img {
+        max-width: 100%; /* Imagem ocupa 100% da largura em telas menores */
+    }
+
+    .produtos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .produtos h3,
+    .contato h3 {
+        font-size: 2em;
+    }
+
+    .btn-whatsapp {
+        bottom: 15px;
+        right: 15px;
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-links {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        justify-content: center; /* Centraliza ícones sociais */
+    }
+}
+
+@media (max-width: 480px) {
+    .header .logo {
+        font-size: 1.8em;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .sobre-text h3 {
+        font-size: 2em;
+    }
+}
